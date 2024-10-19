@@ -1,6 +1,5 @@
-import { ApolloServer } from '@apollo/server'; // preserve-line
-import { startStandaloneServer } from '@apollo/server/standalone'; // preserve-line
-
+import { ApolloServer } from "@apollo/server"; // preserve-line
+import { startStandaloneServer } from "@apollo/server/standalone"; // preserve-line
 
 const typeDefs = `#graphql
  
@@ -15,20 +14,16 @@ const typeDefs = `#graphql
   }
 `;
 
-
 const books = [
   {
-    title: 'The Awakening',
-    author: 'Kate Chopin',
+    title: "The Awakening",
+    author: "Kate Chopin",
   },
   {
-    title: 'City of Glass',
-    author: 'Paul Auster',
+    title: "City of Glass",
+    author: "Paul Auster",
   },
 ];
-
-
-
 
 const resolvers = {
   Query: {
@@ -36,19 +31,17 @@ const resolvers = {
   },
 };
 
-
-const main = async()=>{
+const main = async () => {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
   });
-  
-  
+
   const { url } = await startStandaloneServer(server, {
     listen: { port: 4000 },
   });
-  
+
   console.log(`🚀  Server ready at: ${url}`);
-}
+};
 
 main();

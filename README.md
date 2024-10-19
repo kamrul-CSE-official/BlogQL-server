@@ -16,7 +16,6 @@
     -createdAt
     -updatedAt
     -published
-    -publishedAt
 
 -User
     -id
